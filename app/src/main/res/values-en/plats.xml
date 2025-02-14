@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listePlats">
+        <item>Cows Back Rossini</item>
+        <item>Daurada Net</item>
+        <item>Duck Magret</item>
+        <item>Fake Net</item>
+        <item>Parmesan and Vegetable Risotto</item>
+        <item>Lasagna Ratatouille</item>
+    </string-array>
+</resources>

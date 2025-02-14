@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParametrageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_nom_plat_ajout" />
+
+        <RadioGroup
+            android:id="@+id/rg_plats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/t_nomPlat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Name" />
+
+            <RadioButton
+                android:id="@+id/rb_entrees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/rb_entrees"
+                android:text="@string/rb_entrees" />
+
+            <RadioButton
+                android:id="@+id/rb_plats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/rb_entrees"
+                android:text="@string/rb_plats" />
+
+            <RadioButton
+                android:id="@+id/rb_desserts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/rb_desserts"
+                android:text="@string/rb_desserts" />
+
+            <Button
+                android:id="@+id/b_ajouter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/btn_ajouter"
+                android:text="@string/btn_ajouter" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:entries="@array/listeDesserts" />
+
+            <Button
+                android:id="@+id/b_supprimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/btn_supprimer"
+                android:text="@string/btn_supprimer"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="@string/tv_nom_plat_modification" />
+
+            <Button
+                android:id="@+id/b_modifier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/btn_modifier"
+                android:text="@string/btn_modifier"
+                android:textColor="@color/black" />
+
+        </RadioGroup>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

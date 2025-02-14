@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listeDesserts">
+        <item>Tiramisu maison</item>
+        <item>Iles flottantes</item>
+        <item>Crème brulée maison</item>
+        <item>Salade de fruits frais</item>
+        <item>Mousse au chocolat</item>
+    </string-array>
+</resources>

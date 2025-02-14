@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listeEntrees">
+        <item>Aucun</item>
+        <item>Foie gras maison</item>
+        <item>Saumon fumé</item>
+        <item>Salade verte</item>
+        <item>Gambas poelées</item>
+    </string-array>
+</resources>

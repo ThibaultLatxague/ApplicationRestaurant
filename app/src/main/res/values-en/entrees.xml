@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listeEntrees">
+        <item>None</item>
+        <item>Homemade Greased Liver</item>
+        <item>Smoked Salmon</item>
+        <item>Green Salad</item>
+        <item>Grilled Gambas</item>
+    </string-array>
+</resources>

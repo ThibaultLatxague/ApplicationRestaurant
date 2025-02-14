@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="btn_ajouter">Add</string>
+    <string name="btn_modifier">Update</string>
+    <string name="btn_supprimer">Delete</string>
+    <string name="rb_entrees">Entries</string>
+    <string name="rb_plats">Main</string>
+    <string name="rb_desserts">Deserts</string>
+    <string name="sp_plats">Plate list</string>
+    <string name="tv_nom_plat_ajout">Plate name</string>
+    <string name="tv_nom_plat_modification">Plate name</string>
+</resources>

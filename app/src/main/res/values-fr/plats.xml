@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listePlats">
+        <item>Tournedos de boeuf rossini</item>
+        <item>Filet de daurade</item>
+        <item>Magret de canard</item>
+        <item>Faux filet</item>
+        <item>Risottos aux légumes et parmesan</item>
+        <item>Lasagnes à la ratatouille</item>
+    </string-array>
+</resources>
