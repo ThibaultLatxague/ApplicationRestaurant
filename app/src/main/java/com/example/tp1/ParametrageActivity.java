@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,10 +20,12 @@ public class ParametrageActivity extends AppCompatActivity {
     private Button b_ajouter;
     private Button b_supprimer;
     private Button b_modifier;
+    private RadioGroup rg_categorie;
     private RadioButton rb_entrees;
     private RadioButton rb_plats;
     private RadioButton rb_desserts;
     private EditText t_nomPlat;
+    private Spinner s_plats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class ParametrageActivity extends AppCompatActivity {
         rb_plats = findViewById(R.id.rb_plats);
         rb_desserts = findViewById(R.id.rb_desserts);
         t_nomPlat = findViewById(R.id.t_nomPlat);
+        s_plats = findViewById(R.id.s_plats);
+        rg_categorie = findViewById(R.id.rg_plats);
 
         b_ajouter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +65,18 @@ public class ParametrageActivity extends AppCompatActivity {
                 }
 
                 Log.d("nomNvPlat", t_nomPlat.getText().toString() + " " + typePlat);
+            }
+        });
+
+        b_supprimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RadioButton buttonSelected = findViewById(rg_categorie.getCheckedRadioButtonId());
+                int positionItem = s_plats.getSelectedItemPosition();
+                Object nomItem = s_plats.getSelectedItem();
+                Log.d("ITEM POSITION", "" + positionItem);
+                Log.d("ITEM OBJET", "" + nomItem);
+                Log.d("ITEM CATEGORIE", buttonSelected.getText().toString());
             }
         });
     }

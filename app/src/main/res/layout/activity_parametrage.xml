@@ -60,7 +60,7 @@
                 android:text="@string/btn_ajouter" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/s_plats"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:entries="@array/listeDesserts" />
