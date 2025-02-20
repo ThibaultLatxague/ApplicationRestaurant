@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="listeDesserts">
+        <item>None</item>
         <item>Homemade Tiramisu</item>
         <item>Floating Islands</item>
         <item>Homemade Burned Cream</item>

@@ -52,42 +52,72 @@
                 android:contentDescription="@string/rb_desserts"
                 android:text="@string/rb_desserts" />
 
-            <Button
-                android:id="@+id/b_ajouter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/btn_ajouter"
-                android:text="@string/btn_ajouter" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/b_ajouter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btn_ajouter"
+            android:text="@string/btn_ajouter" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/s_entrees"
+                android:layout_width="130dp"
+                android:layout_height="52dp"
+                android:entries="@array/listeEntrees" />
 
             <Spinner
                 android:id="@+id/s_plats"
+                android:layout_width="131dp"
+                android:layout_height="57dp"
+                android:entries="@array/listePlats" />
+
+            <Spinner
+                android:id="@+id/s_desserts"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
                 android:entries="@array/listeDesserts" />
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/b_supprimer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/btn_supprimer"
-                android:text="@string/btn_supprimer"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/b_supprimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:contentDescription="@string/btn_supprimer"
+            android:text="@string/btn_supprimer"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:text="@string/tv_nom_plat_modification" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_nom_plat_modification" />
 
-            <Button
-                android:id="@+id/b_modifier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/btn_modifier"
-                android:text="@string/btn_modifier"
-                android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/t_nomPlatModif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
 
-        </RadioGroup>
+        <Button
+            android:id="@+id/b_modifier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:contentDescription="@string/btn_modifier"
+            android:text="@string/btn_modifier"
+            android:textColor="@color/black" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

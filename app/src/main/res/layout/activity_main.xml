@@ -154,8 +154,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:backgroundTint="@color/green"
         android:text="Ajouter"
-        android:textColor="@color/green" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView5"
@@ -190,8 +191,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:backgroundTint="@color/red"
                 android:text="Enregistrer"
-                android:textColor="@color/red"
+                android:textColor="@color/black"
                 android:textColorLink="@color/red"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -219,6 +221,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Button" />
+        android:text="Paramètres" />
 
 </LinearLayout>

@@ -21,6 +21,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
+    private int ind;
     private ImageView logo;
     private Spinner s_entrees;
     private Spinner s_plats;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ind = Modele.newCommande();
 
         logo = findViewById(R.id.imageView);
         s_entrees = findViewById(R.id.s_entree);
@@ -93,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent unIntent = new Intent(getApplicationContext(), ParametrageActivity.class);
                 startActivity(unIntent);
+            }
+        });
+
+        b_ajouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Commande maCommande = Modele.lesCommandes.get(ind);
+                maCommande.getLesEntrees().put(s_entrees.getSelectedItem().toString(), Integer.parseInt(i_quantite.getText().toString()));
+                maCommande.getLesPlats().put(s_plats.getSelectedItem().toString(), Integer.parseInt(i_quantite.getText().toString()));
+                maCommande.getLesDesserts().put(s_desserts.getSelectedItem().toString(), Integer.parseInt(i_quantite.getText().toString()));
             }
         });
     }

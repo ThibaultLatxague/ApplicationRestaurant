@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="listePlats">
+        <item>None</item>
         <item>Cows Back Rossini</item>
         <item>Daurada Net</item>
         <item>Duck Magret</item>

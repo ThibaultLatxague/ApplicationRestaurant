@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="listeDesserts">
+        <item>Aucun</item>
         <item>Tiramisu maison</item>
         <item>Iles flottantes</item>
         <item>Crème brulée maison</item>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="listePlats">
+        <item>Aucun</item>
         <item>Tournedos de boeuf rossini</item>
         <item>Filet de daurade</item>
         <item>Magret de canard</item>
