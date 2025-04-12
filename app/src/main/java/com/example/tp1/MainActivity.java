@@ -1,15 +1,19 @@
 package com.example.tp1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private int ind;
@@ -33,7 +39,16 @@ public class MainActivity extends AppCompatActivity {
     private Button b_enregistrer;
     private Button b_annuler;
     private Button b_parametre;
+    private Button b_gestionEntrees;
+    private Button b_gestionPlats;
+    private Button b_gestionDesserts;
+    private PlatDAO unPlatDAO;
+    private TypePlatDAO unTypePlatDAO;
+    private ArrayList<Plat> lstPlats;
+    private ArrayList<TypePlat> lstTypesPlats;
+    private ArrayAdapter<String> contenuPlats;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Modele.initEntrées();
+        Modele.initPlats();
+        Modele.initDesserts();
 
         ind = Modele.newCommande();
 
@@ -58,6 +77,20 @@ public class MainActivity extends AppCompatActivity {
         b_enregistrer = findViewById(R.id.b_enregistrer);
         b_annuler = findViewById(R.id.b_annuler);
         b_parametre = findViewById(R.id.b_parametre);
+        b_gestionEntrees = findViewById(R.id.b_gestion_entrees);
+        b_gestionPlats = findViewById(R.id.b_gestion_plats);
+        b_gestionDesserts = findViewById(R.id.b_gestion_desserts);
+
+        unPlatDAO = new PlatDAO(this);
+        unTypePlatDAO = new TypePlatDAO(this);
+
+        lstPlats = unPlatDAO.getPlats();
+        lstTypesPlats = unTypePlatDAO.getTypePlats();
+
+        // Remplir le spinner des plats
+        affSpiderEntrees();
+        affSpiderPlats();
+        affSpiderDesserts();
 
         s_quantite.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -99,6 +132,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        b_gestionEntrees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent unIntent = new Intent(getApplicationContext(), GestionEntreesActivity.class);
+                startActivity(unIntent);
+            }
+        });
+
+        b_gestionPlats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent unIntent = new Intent(getApplicationContext(), GestionPlatsActivity.class);
+                startActivity(unIntent);
+            }
+        });
+
+        b_gestionDesserts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent unIntent = new Intent(getApplicationContext(), GestionDessertsActivity.class);
+                startActivity(unIntent);
+            }
+        });
+
         b_ajouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,5 +165,29 @@ public class MainActivity extends AppCompatActivity {
                 maCommande.getLesDesserts().put(s_desserts.getSelectedItem().toString(), Integer.parseInt(i_quantite.getText().toString()));
             }
         });
+    }
+
+    public void affSpiderEntrees() {
+        ArrayAdapter<String> contenu = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        for (int i = 0; i < unPlatDAO.getPlatsByType("Entrée").size(); i++) {
+            contenuPlats.add(unPlatDAO.getPlatsByType("Entrée").get(i).getLibelleP());
+        }
+        s_entrees.setAdapter(contenu);
+    }
+
+    public void affSpiderPlats() {
+        contenuPlats = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        for (int i = 0; i < unPlatDAO.getPlatsByType("Plat").size(); i++) {
+            contenuPlats.add(unPlatDAO.getPlatsByType("Plat").get(i).getLibelleP());
+        }
+        s_plats.setAdapter(contenuPlats);
+    }
+
+    public void affSpiderDesserts() {
+        ArrayAdapter<String> contenu = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        for (int i = 0; i < unPlatDAO.getPlatsByType("Dessert").size(); i++) {
+            contenuPlats.add(unPlatDAO.getPlatsByType("Dessert").get(i).getLibelleP());
+        }
+        s_desserts.setAdapter(contenu);
     }
 }

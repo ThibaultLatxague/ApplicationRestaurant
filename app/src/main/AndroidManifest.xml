@@ -16,6 +16,15 @@
             android:name=".ParametrageActivity"
             android:exported="false" />
         <activity
+            android:name=".GestionEntreesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionPlatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GestionDessertsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
